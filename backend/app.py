@@ -3,19 +3,28 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from openai import OpenAI
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
+
+def load_env_variables():
+    # ローカル環境の .env ファイルがある場合はそれを読み込む
+    if os.path.exists('.env'):
+        from dotenv import load_dotenv
+        load_dotenv()
+
+    # 環境変数を取得
+    api_key = os.environ.get("OPENAI_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "OPENAI_API_KEY is not set in the environment variables.")
+    return api_key
+
 
 app = Flask(__name__)
 CORS(app)
 
-api_key = os.getenv("OPENAI_API_KEY")
-if not api_key:
-    raise ValueError("No OpenAI API key found. Please check your .env file.")
-
+# 環境変数を読み込む
+api_key = load_env_variables()
 client = OpenAI(api_key=api_key)
-print(api_key)
 
 
 @app.route('/generate-mandala', methods=['POST'])
