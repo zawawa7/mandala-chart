@@ -17,4 +17,4 @@ network:
   connect: true
 
 variables:
-  REACT_APP_API_URL: http://${COPILOT_SERVICE_DISCOVERY_ENDPOINT}:8080
+  REACT_APP_API_URL: ${COPILOT_SERVICE_DISCOVERY_ENDPOINT:-http://localhost:8080}
