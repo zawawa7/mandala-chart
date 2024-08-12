@@ -1,0 +1,26 @@
+.
+├── .DS_Store
+├── .gitignore
+├── backend
+│   ├── .env
+│   └── app.py
+├── frontend
+│   ├── .DS_Store
+│   ├── .env
+│   ├── README.md
+│   ├── node_modules
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── postcss.config.js
+│   ├── public
+│   ├── src
+│   └── tailwind.config.js
+├── requirements.txt
+├── tree.txt
+└── venv
+    ├── bin
+    ├── include
+    ├── lib
+    └── pyvenv.cfg
+
+10 directories, 14 files
