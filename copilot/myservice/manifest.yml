@@ -18,11 +18,3 @@ network:
 
 variables:
   REACT_APP_API_URL: http://${COPILOT_SERVICE_DISCOVERY_ENDPOINT}:8080
-
-environments:
-  dev:
-    variables:
-      REACT_APP_API_URL: http://${COPILOT_SERVICE_DISCOVERY_ENDPOINT}:8080
-  prod:
-    variables:
-      REACT_APP_API_URL: http://${COPILOT_SERVICE_DISCOVERY_ENDPOINT}:8080
